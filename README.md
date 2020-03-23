@@ -1,0 +1,3 @@
+- node v6.17.0
+- npm v5.6.0
+- webpack v4.42.0
