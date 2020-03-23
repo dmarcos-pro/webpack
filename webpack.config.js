@@ -1,9 +1,9 @@
-const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin    = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const SassLintPlugin          = require('sass-lint-webpack');
-const dev = process.env.NODE_ENV === "dev";
+const path        = require('path');
+const UglifyJs    = require('uglifyjs-webpack-plugin');
+const MiniCss     = require("mini-css-extract-plugin");
+const OptimizeCSS = require("optimize-css-assets-webpack-plugin");
+const SassLint    = require('sass-lint-webpack');
+const dev         = process.env.NODE_ENV === "dev";
 
 let config = {
     entry: {
@@ -37,7 +37,7 @@ let config = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                use: [MiniCss.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(woff|woff2|eot|ttf|png|jp(e*)g|gif|svg)$/,
@@ -46,18 +46,18 @@ let config = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
+        new MiniCss({
             filename: '[name].css'
         }),
-        new SassLintPlugin()
+        new SassLint()
     ],
     watch: true
 };
 
 if (!dev) {
     config.plugins.push(
-        new UglifyJsPlugin(),
-        new OptimizeCSSAssetsPlugin()
+        new UglifyJs(),
+        new OptimizeCSS()
     )
 }
 
