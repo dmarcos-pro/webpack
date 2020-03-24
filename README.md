@@ -1,8 +1,13 @@
+
+# How to install
+
+## Version
+
 - node v6.17.0
 - npm v5.6.0
 - webpack v4.42.0
 
-# How to install
+## To Do
 
 Create package.json file
 ```
@@ -22,12 +27,12 @@ Change scripts in package.json file
 },
 ```
 
-Launch Webpack - mode dev
+Run Webpack - mode dev
 ```
 npm run dev
 ```
 
-Launch Webpack - mode prod (minify code)
+Run Webpack - mode prod (minify code)
 ```
 npm run prod
 ```
